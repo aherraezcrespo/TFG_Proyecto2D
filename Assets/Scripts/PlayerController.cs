@@ -10,13 +10,14 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRb;
     private float jumbForce = 7;
     private bool isGround = true;
+    private Animator animatorPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
         flipPlayer = GetComponent<SpriteRenderer>();
         playerRb = GetComponent<Rigidbody2D>();
-
+        animatorPlayer = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGround)
         {
+            animatorPlayer.SetTrigger("Jump");
             playerRb.AddForce(Vector2.up * jumbForce, ForceMode2D.Impulse);
         }
 
