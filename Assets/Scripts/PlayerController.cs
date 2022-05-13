@@ -10,33 +10,42 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRb;
     private float jumbForce = 7;
     private bool isGround = true;
-    private Animator animatorPlayer;
+    private Animator animatorPlayerJump;
+    private Animator animatorPlayerRun;
 
     // Start is called before the first frame update
     void Start()
     {
         flipPlayer = GetComponent<SpriteRenderer>();
         playerRb = GetComponent<Rigidbody2D>();
-        animatorPlayer = GetComponent<Animator>();
+        animatorPlayerRun = GetComponent<Animator>();
+        animatorPlayerJump = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         movementX = Input.GetAxis("Horizontal");
+
         if (movementX > 0)
         {
+            
             flipPlayer.flipX = false;
         }
+        
         if (movementX < 0)
         {
             flipPlayer.flipX = true;
         }
+        
         transform.position += new Vector3(movementX, 0, 0) * speed * Time.deltaTime;
+
+        animatorPlayerRun.SetFloat("VelocidadMovimiento", Mathf.Abs(movementX));
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGround)
         {
-            animatorPlayer.SetTrigger("Jump");
+            animatorPlayerJump.SetTrigger("Jump");
             playerRb.AddForce(Vector2.up * jumbForce, ForceMode2D.Impulse);
         }
 
