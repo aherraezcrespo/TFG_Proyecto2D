@@ -58,6 +58,10 @@ public class PlayerController : MonoBehaviour
             isGround = true;
         }
 
+        if (collision.gameObject.tag == "Water")
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
