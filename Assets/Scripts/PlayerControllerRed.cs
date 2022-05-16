@@ -12,6 +12,8 @@ public class PlayerControllerRed : MonoBehaviour
     private bool isGround = true;
     private Animator animatorPlayerJump;
     private Animator animatorPlayerRun;
+    public GameObject explosionPrefab;
+    public GameObject cameraPlayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +59,15 @@ public class PlayerControllerRed : MonoBehaviour
 
         if (collision.gameObject.tag == "Water")
         {
+            cameraPlayer.transform.parent = null;
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            cameraPlayer.transform.parent = null;
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

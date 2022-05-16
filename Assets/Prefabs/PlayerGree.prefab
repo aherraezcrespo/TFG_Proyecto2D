@@ -252,3 +252,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20ee9db03e6ded4fbc3bb66afa25b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 7052665612581140207, guid: 751e87739eb12164d9302aae43662447, type: 3}
+  cameraPlayer: {fileID: 690798471}
