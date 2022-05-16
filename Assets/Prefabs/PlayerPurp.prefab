@@ -95,9 +95,9 @@ GameObject:
   - component: {fileID: 1486541825974429192}
   - component: {fileID: 7705364045572774212}
   - component: {fileID: 5719057583928169559}
-  - component: {fileID: 4712855190253238530}
   - component: {fileID: 6549064746736303319}
   - component: {fileID: 3043241445239718356}
+  - component: {fileID: 1199316469225534261}
   m_Layer: 0
   m_Name: PlayerPurp
   m_TagString: Untagged
@@ -193,18 +193,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4712855190253238530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6540092094409327619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ba6d77a98339a14d91ab32af72d73c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &6549064746736303319
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -252,3 +240,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1199316469225534261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6540092094409327619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7e7060296d7f2d4089b81c40b446532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

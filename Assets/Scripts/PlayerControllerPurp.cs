@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllerPurp : MonoBehaviour
 {
     private float speed = 5;
     private float movementX;
     private SpriteRenderer flipPlayer;
     private Rigidbody2D playerRb;
-    private float jumbForce = 7;
+    private float jumbForce = 9;
     private bool isGround = true;
     private Animator animatorPlayerJump;
     private Animator animatorPlayerRun;
@@ -25,20 +25,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         movementX = Input.GetAxis("Horizontal");
 
         if (movementX > 0)
         {
-            
+
             flipPlayer.flipX = false;
         }
-        
+
         if (movementX < 0)
         {
             flipPlayer.flipX = true;
         }
-        
+
         transform.position += new Vector3(movementX, 0, 0) * speed * Time.deltaTime;
 
         animatorPlayerRun.SetFloat("VelocidadMovimiento", Mathf.Abs(movementX));
@@ -48,7 +47,6 @@ public class PlayerController : MonoBehaviour
             animatorPlayerJump.SetTrigger("Jump");
             playerRb.AddForce(Vector2.up * jumbForce, ForceMode2D.Impulse);
         }
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -63,6 +61,7 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 
     private void OnCollisionExit2D(Collision2D collision)
     {

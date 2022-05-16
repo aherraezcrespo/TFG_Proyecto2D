@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4925821534763162506}
   - component: {fileID: 4925821534763162511}
   - component: {fileID: 4925821534763162510}
-  - component: {fileID: 4925821534763162505}
+  - component: {fileID: 2455573749167043701}
   m_Layer: 0
   m_Name: PlayerRed
   m_TagString: Player
@@ -240,7 +240,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4925821534763162505
+--- !u!114 &2455573749167043701
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -249,6 +249,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4925821534763162517}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ba6d77a98339a14d91ab32af72d73c6, type: 3}
+  m_Script: {fileID: 11500000, guid: c80f92a655cd2094da8a2f9bfc9c98ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
