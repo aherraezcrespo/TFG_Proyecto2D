@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     private float movementX;
     public Transform target;
     private float speed2 = 0.005f;
+    public GameObject explosionPrefab;
     private Vector3 start, end;
 
     // Start is called before the first frame update
@@ -41,6 +42,15 @@ public class EnemyController : MonoBehaviour
         else
         {
             flipEnemy.flipX = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }
