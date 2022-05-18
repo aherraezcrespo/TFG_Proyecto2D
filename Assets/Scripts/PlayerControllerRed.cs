@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerControllerRed : MonoBehaviour
 {
@@ -14,7 +16,15 @@ public class PlayerControllerRed : MonoBehaviour
     private Animator animatorPlayerRun;
     public GameObject explosionPrefab;
     public GameObject cameraPlayer;
+<<<<<<< HEAD
     public static int vida = 5;
+=======
+    public int vida = 3;
+    public CorazonesController vida_canvas;
+
+    public Text textoContador;
+    private int puntuacion = 0;
+>>>>>>> pablob
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +38,7 @@ public class PlayerControllerRed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        vida_canvas.CambioVida(vida);
         movementX = Input.GetAxis("Horizontal");
 
         if (movementX > 0)
@@ -63,14 +74,30 @@ public class PlayerControllerRed : MonoBehaviour
 
         if (collision.gameObject.tag == "Water")
         {
+<<<<<<< HEAD
             vida -= 1;
             Debug.Log("Vida -> " + vida);
+=======
+            cameraPlayer.transform.parent = null;
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+            vida--;
+            SceneManager.LoadScene("Spring");
+>>>>>>> pablob
         }
 
         if (collision.gameObject.tag == "Enemy")
         {
+<<<<<<< HEAD
             vida -= 1;
             Debug.Log("Vida -> " + vida);
+=======
+            cameraPlayer.transform.parent = null;
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+            vida--;
+            SceneManager.LoadScene("Spring");
+>>>>>>> pablob
         }
     }
 
@@ -82,6 +109,7 @@ public class PlayerControllerRed : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
     private void muertePlayer(int vida)
     {
         if (vida == 0)
@@ -89,6 +117,14 @@ public class PlayerControllerRed : MonoBehaviour
             cameraPlayer.transform.parent = null;
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
+=======
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Coin")
+        {
+            puntuacion = puntuacion + 5;
+            textoContador.text = "PUNTOS: " + puntuacion.ToString();
+>>>>>>> pablob
         }
     }
 }
