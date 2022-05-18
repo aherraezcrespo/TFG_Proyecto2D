@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 5719057583928169559}
   - component: {fileID: 6549064746736303319}
   - component: {fileID: 3043241445239718356}
-  - component: {fileID: 1199316469225534261}
+  - component: {fileID: 8582785177350655545}
   m_Layer: 0
   m_Name: PlayerPurp
   m_TagString: Untagged
@@ -161,7 +161,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -568972640, guid: a5aae5c1b05dc174582c27c3d6137dc8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -240,7 +240,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1199316469225534261
+--- !u!114 &8582785177350655545
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -254,3 +254,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 7419822742022077837, guid: 32def36cc0391d841842a6c9adfe6396, type: 3}
   cameraPlayer: {fileID: 3490433469698778850}
+  textoContador: {fileID: 1281429283465725819, guid: a71e0220d2d36d74ba86581a55fd9824, type: 3}

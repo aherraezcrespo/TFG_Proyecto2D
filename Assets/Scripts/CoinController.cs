@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class CoinController : MonoBehaviour
 {
-    public static int points = 0;
-    public Text pointsText;
 
     // Start is called before the first frame update
     void Start()
@@ -22,10 +20,7 @@ public class CoinController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
-        {
-            points += 5;
-            Debug.Log("Puntos -> " + points);
+        if (collision.tag == "Player") { 
             Destroy(gameObject);
         }
     }
