@@ -14,6 +14,7 @@ public class PlayerControllerPurp : MonoBehaviour
     private Animator animatorPlayerRun;
     public GameObject explosionPrefab;
     public GameObject cameraPlayer;
+    public static int vida = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +50,8 @@ public class PlayerControllerPurp : MonoBehaviour
             animatorPlayerJump.SetTrigger("Jump");
             playerRb.AddForce(Vector2.up * jumbForce, ForceMode2D.Impulse);
         }
+
+        muertePlayer(vida);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -60,16 +63,14 @@ public class PlayerControllerPurp : MonoBehaviour
 
         if (collision.gameObject.tag == "Water")
         {
-            cameraPlayer.transform.parent = null;
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            vida -= 1;
+            Debug.Log("Vida -> " + vida);
         }
 
         if (collision.gameObject.tag == "Enemy")
         {
-            cameraPlayer.transform.parent = null;
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            vida -= 1;
+            Debug.Log("Vida -> " + vida);
         }
     }
 
@@ -79,6 +80,16 @@ public class PlayerControllerPurp : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isGround = false;
+        }
+    }
+
+    private void muertePlayer(int vida)
+    {
+        if (vida == 0)
+        {
+            cameraPlayer.transform.parent = null;
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }

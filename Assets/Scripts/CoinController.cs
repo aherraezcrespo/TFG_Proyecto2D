@@ -25,7 +25,6 @@ public class CoinController : MonoBehaviour
         if (collision.tag == "Player")
         {
             points += 5;
-            Debug.Log("Puntos -> " + points);
             Destroy(gameObject);
         }
     }
