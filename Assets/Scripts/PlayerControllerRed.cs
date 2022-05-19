@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Threading;
+using UnityEngine.UI;
 
 public class PlayerControllerRed : MonoBehaviour
 {
@@ -11,15 +11,13 @@ public class PlayerControllerRed : MonoBehaviour
     private Rigidbody2D playerRb;
     private float jumbForce = 7;
     private bool isGround = true;
-    private AudioSource playerAudioSource;
-    public AudioClip jump;
-    public AudioClip playerLose;
     private Animator animatorPlayerJump;
     private Animator animatorPlayerRun;
     public GameObject explosionPrefab;
     public GameObject cameraPlayer;
     public static int vida = 5;
-    private int myDelay = 2000;
+    public static int puntuacion = 0;
+    public Text textoContador;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +26,6 @@ public class PlayerControllerRed : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         animatorPlayerRun = GetComponent<Animator>();
         animatorPlayerJump = GetComponent<Animator>();
-        playerAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -53,7 +50,6 @@ public class PlayerControllerRed : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGround)
         {
-            playerAudioSource.PlayOneShot(jump);
             animatorPlayerJump.SetTrigger("Jump");
             playerRb.AddForce(Vector2.up * jumbForce, ForceMode2D.Impulse);
         }
@@ -79,7 +75,6 @@ public class PlayerControllerRed : MonoBehaviour
             vida -= 1;
             Debug.Log("Vida -> " + vida);
         }
-
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -94,11 +89,20 @@ public class PlayerControllerRed : MonoBehaviour
     {
         if (vida == 0)
         {
-            playerAudioSource.PlayOneShot(playerLose);
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            Thread.Sleep(myDelay);
             cameraPlayer.transform.parent = null;
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
+        }
+    }
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Coin")
+        {
+            puntuacion = puntuacion + 5;
+            textoContador.text = "PUNTOS: " + puntuacion.ToString();
         }
     }
 }
