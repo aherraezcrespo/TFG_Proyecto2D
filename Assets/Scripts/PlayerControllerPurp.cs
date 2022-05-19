@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading;
 
 public class PlayerControllerPurp : MonoBehaviour
 {
@@ -10,11 +11,15 @@ public class PlayerControllerPurp : MonoBehaviour
     private Rigidbody2D playerRb;
     private float jumbForce = 9;
     private bool isGround = true;
+    private AudioSource playerAudioSource;
+    public AudioClip jump;
+    public AudioClip playerLose;
     private Animator animatorPlayerJump;
     private Animator animatorPlayerRun;
     public GameObject explosionPrefab;
     public GameObject cameraPlayer;
     public static int vida = 3;
+    private int myDelay = 2000;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +28,7 @@ public class PlayerControllerPurp : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         animatorPlayerRun = GetComponent<Animator>();
         animatorPlayerJump = GetComponent<Animator>();
+        playerAudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -47,6 +53,7 @@ public class PlayerControllerPurp : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGround)
         {
+            playerAudioSource.PlayOneShot(jump);
             animatorPlayerJump.SetTrigger("Jump");
             playerRb.AddForce(Vector2.up * jumbForce, ForceMode2D.Impulse);
         }
@@ -87,6 +94,9 @@ public class PlayerControllerPurp : MonoBehaviour
     {
         if (vida == 0)
         {
+            playerAudioSource.PlayOneShot(playerLose);
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Thread.Sleep(myDelay);
             cameraPlayer.transform.parent = null;
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
