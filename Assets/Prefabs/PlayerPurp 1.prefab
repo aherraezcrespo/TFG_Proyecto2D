@@ -253,6 +253,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7e7060296d7f2d4089b81c40b446532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target_inicio: {fileID: 0}
+  jump: {fileID: 0}
+  playerLose: {fileID: 0}
   explosionPrefab: {fileID: 7419822742022077837, guid: 32def36cc0391d841842a6c9adfe6396, type: 3}
   cameraPlayer: {fileID: 1208196877037178723}
   textoContador: {fileID: 0}
