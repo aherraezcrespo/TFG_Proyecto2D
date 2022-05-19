@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsText: {fileID: 0}
+  coin: {fileID: 8300000, guid: 65b2fe140d75f174ba4b1571f6705e7a, type: 3}
 --- !u!61 &2618966458395017991
 BoxCollider2D:
   m_ObjectHideFlags: 0

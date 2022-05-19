@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.Threading;
 
 public class PlayerControllerGree : MonoBehaviour
 {
     private float speed = 7;
+    private float speedRestart = 100;
+    public Transform target_inicio;
     private float movementX;
     private SpriteRenderer flipPlayer;
     private Rigidbody2D playerRb;
@@ -18,8 +21,11 @@ public class PlayerControllerGree : MonoBehaviour
     private Animator animatorPlayerRun;
     public GameObject explosionPrefab;
     public GameObject cameraPlayer;
-    public static int vida = 3;
     private int myDelay = 2000;
+    public static int vida = 3;
+    public static int puntuacion = 0;
+    public Text textoContador;
+    public Corazones vida_canvas;
 
     // Start is called before the first frame update
     void Start()
@@ -72,12 +78,15 @@ public class PlayerControllerGree : MonoBehaviour
         {
             vida -= 1;
             Debug.Log("Vida -> " + vida);
+            vida_canvas.CambioVida(vida);
+            transform.position = Vector3.MoveTowards(transform.position, target_inicio.position, speedRestart + Time.deltaTime);
         }
 
         if (collision.gameObject.tag == "Enemy")
         {
             vida -= 1;
             Debug.Log("Vida -> " + vida);
+            vida_canvas.CambioVida(vida);
         }
     }
 
@@ -99,6 +108,14 @@ public class PlayerControllerGree : MonoBehaviour
             cameraPlayer.transform.parent = null;
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Coin")
+        {
+            puntuacion = puntuacion + 5;
+            textoContador.text = "PUNTOS: " + puntuacion.ToString();
         }
     }
 
