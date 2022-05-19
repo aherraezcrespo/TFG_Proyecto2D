@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5843516245629514329}
   - component: {fileID: 5843516245629514331}
   - component: {fileID: 5843516245629514328}
+  - component: {fileID: 1182430387244052548}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -80,6 +81,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'PUNTOS: 000'
+--- !u!114 &1182430387244052548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5843516245629514310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb1600d9bce6734b9c96b28aa3c9f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5843516245638103071
 GameObject:
   m_ObjectHideFlags: 0

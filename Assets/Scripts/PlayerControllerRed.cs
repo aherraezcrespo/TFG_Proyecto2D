@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerControllerRed : MonoBehaviour
 {
@@ -97,6 +98,9 @@ public class PlayerControllerRed : MonoBehaviour
         {
             cameraPlayer.transform.parent = null;
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            //System.Threading.Thread.Sleep(1500);
+            vida = 5;
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
             Destroy(gameObject);
         }
     }

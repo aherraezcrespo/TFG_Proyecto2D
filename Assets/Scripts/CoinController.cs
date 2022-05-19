@@ -7,7 +7,6 @@ using System.Threading;
 public class CoinController : MonoBehaviour
 {
     public static int points = 0;
-    public Text pointsText;
     private AudioSource coinAudioSource;
     public AudioClip coin;
 

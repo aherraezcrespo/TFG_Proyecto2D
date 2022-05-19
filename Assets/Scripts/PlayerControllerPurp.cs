@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class PlayerControllerPurp : MonoBehaviour
 {
@@ -106,9 +107,11 @@ public class PlayerControllerPurp : MonoBehaviour
         {
             playerAudioSource.PlayOneShot(playerLose);
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            Thread.Sleep(myDelay);
+            //Thread.Sleep(myDelay);
             cameraPlayer.transform.parent = null;
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            //Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            vida = 3;
+            SceneManager.LoadScene("GameOver");
             Destroy(gameObject);
         }
     }
