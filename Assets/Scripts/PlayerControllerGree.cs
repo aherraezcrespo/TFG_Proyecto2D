@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerControllerGree : MonoBehaviour
 {
@@ -15,10 +14,6 @@ public class PlayerControllerGree : MonoBehaviour
     private Animator animatorPlayerRun;
     public GameObject explosionPrefab;
     public GameObject cameraPlayer;
-
-    public Text textoContador;
-    private int puntuacion = 0;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -82,15 +77,6 @@ public class PlayerControllerGree : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isGround = false;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Coin")
-        {
-            puntuacion = puntuacion + 5;
-            textoContador.text = "PUNTOS: " + puntuacion.ToString();
         }
     }
 

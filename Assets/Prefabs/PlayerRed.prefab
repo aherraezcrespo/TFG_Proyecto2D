@@ -161,7 +161,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1558045375, guid: a407a3b3fefdc4b4595de46072f1ba58, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -254,4 +254,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 1340905626085436462, guid: 5d430b7da23fa6e438dd57e44c9cac7c, type: 3}
   cameraPlayer: {fileID: 4925821534521128134}
-  textoContador: {fileID: 0}
