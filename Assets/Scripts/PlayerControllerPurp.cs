@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerControllerPurp : MonoBehaviour
 {
@@ -16,9 +15,6 @@ public class PlayerControllerPurp : MonoBehaviour
     public GameObject explosionPrefab;
     public GameObject cameraPlayer;
     public static int vida = 3;
-
-    public Text textoContador;
-    private int puntuacion = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -87,7 +83,6 @@ public class PlayerControllerPurp : MonoBehaviour
         }
     }
 
-<<<<<<< HEAD
     private void muertePlayer(int vida)
     {
         if (vida == 0)
@@ -95,14 +90,6 @@ public class PlayerControllerPurp : MonoBehaviour
             cameraPlayer.transform.parent = null;
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
-=======
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Coin")
-        {
-            puntuacion = puntuacion + 5;
-            textoContador.text = "PUNTOS: " + puntuacion.ToString();
->>>>>>> pablob
         }
     }
 }

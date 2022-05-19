@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4670048287743779952}
   - component: {fileID: 8061415371256381781}
   - component: {fileID: 281685538312482211}
-  - component: {fileID: -5381897565720662522}
+  - component: {fileID: 6645811492695696670}
   m_Layer: 0
   m_Name: PlayerGree
   m_TagString: Untagged
@@ -161,7 +161,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 22510390, guid: d2f4caac5dd2da646aeee28782ecbda1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -240,7 +240,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-5381897565720662522
+--- !u!114 &6645811492695696670
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -254,4 +254,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 7052665612581140207, guid: 751e87739eb12164d9302aae43662447, type: 3}
   cameraPlayer: {fileID: 690798471}
-  textoContador: {fileID: 1281429283465725819, guid: a71e0220d2d36d74ba86581a55fd9824, type: 3}
