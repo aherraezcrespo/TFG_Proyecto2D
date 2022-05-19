@@ -11,6 +11,8 @@ public class EnemyController : MonoBehaviour
     private float speed2 = 0.005f;
     public GameObject explosionPrefab;
     private Vector3 start, end;
+    public PlayerControllerRed player;
+
 
     // Start is called before the first frame update
     void Start()
@@ -53,4 +55,5 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }
