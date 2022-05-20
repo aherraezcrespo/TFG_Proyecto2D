@@ -14,7 +14,7 @@ public class PlayerControllerGree : MonoBehaviour
     private Rigidbody2D playerRb;
     private float jumbForce = 7;
     private bool isGround = true;
-    private AudioSource playerAudioSource;
+    private AudioSource playerAudioSourceGree;
     public AudioClip jump;
     public AudioClip playerLose;
     private Animator animatorPlayerJump;
@@ -34,7 +34,7 @@ public class PlayerControllerGree : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         animatorPlayerRun = GetComponent<Animator>();
         animatorPlayerJump = GetComponent<Animator>();
-        playerAudioSource = GetComponent<AudioSource>();
+        playerAudioSourceGree = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -59,7 +59,7 @@ public class PlayerControllerGree : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGround)
         {
-            playerAudioSource.PlayOneShot(jump);
+            playerAudioSourceGree.PlayOneShot(jump);
             animatorPlayerJump.SetTrigger("Jump");
             playerRb.AddForce(Vector2.up * jumbForce, ForceMode2D.Impulse);
         }
@@ -103,7 +103,7 @@ public class PlayerControllerGree : MonoBehaviour
     {
         if (vida == 0)
         {
-            playerAudioSource.PlayOneShot(playerLose);
+            playerAudioSourceGree.PlayOneShot(playerLose);
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             //Thread.Sleep(myDelay);
             cameraPlayer.transform.parent = null;

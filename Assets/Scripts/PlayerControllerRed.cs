@@ -15,6 +15,9 @@ public class PlayerControllerRed : MonoBehaviour
     private bool isGround = true;
     private Animator animatorPlayerJump;
     private Animator animatorPlayerRun;
+    private AudioSource playerAudioSourceRed;
+    public AudioClip jump;
+    public AudioClip playerLose;
     public GameObject explosionPrefab;
     public GameObject cameraPlayer;
     public int vida = 5;
@@ -29,6 +32,7 @@ public class PlayerControllerRed : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         animatorPlayerRun = GetComponent<Animator>();
         animatorPlayerJump = GetComponent<Animator>();
+        playerAudioSourceRed = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -53,6 +57,7 @@ public class PlayerControllerRed : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGround)
         {
+            playerAudioSourceRed.PlayOneShot(jump);
             animatorPlayerJump.SetTrigger("Jump");
             playerRb.AddForce(Vector2.up * jumbForce, ForceMode2D.Impulse);
         }
@@ -96,11 +101,13 @@ public class PlayerControllerRed : MonoBehaviour
     {
         if (vida == 0)
         {
-            cameraPlayer.transform.parent = null;
+            playerAudioSourceRed.PlayOneShot(playerLose);
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            //System.Threading.Thread.Sleep(1500);
-            vida = 5;
-            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            //Thread.Sleep(myDelay);
+            cameraPlayer.transform.parent = null;
+            //Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            vida = 3;
+            SceneManager.LoadScene("GameOver");
             Destroy(gameObject);
         }
     }
