@@ -23,7 +23,7 @@ public class PlayerControllerPurp : MonoBehaviour
     public GameObject explosionPrefab;
     public GameObject cameraPlayer;
     private int myDelay = 2000;
-    public static int vida = 3;
+    public int vida = 3;
     public static int puntuacion = 0;
     public Text textoContador;
     public Corazones vida_canvas;

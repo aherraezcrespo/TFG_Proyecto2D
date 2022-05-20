@@ -18,7 +18,7 @@ public class PlayerControllerRed : MonoBehaviour
     private Animator animatorPlayerRun;
     public GameObject explosionPrefab;
     public GameObject cameraPlayer;
-    public static int vida = 5;
+    public int vida = 5;
     public static int puntuacion = 0;
     public Text textoContador;
     public CorazonesRed vida_canvas;
