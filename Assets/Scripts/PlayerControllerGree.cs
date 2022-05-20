@@ -9,7 +9,6 @@ public class PlayerControllerGree : MonoBehaviour
 {
     private float speed = 7;
     private float speedRestart = 100;
-    public Transform target_inicio;
     private float movementX;
     private SpriteRenderer flipPlayer;
     private Rigidbody2D playerRb;
@@ -77,10 +76,11 @@ public class PlayerControllerGree : MonoBehaviour
 
         if (collision.gameObject.tag == "Water")
         {
-            vida -= 1;
-            Debug.Log("Vida -> " + vida);
-            vida_canvas.CambioVida(vida);
-            transform.position = Vector3.MoveTowards(transform.position, target_inicio.position, speedRestart + Time.deltaTime);
+            cameraPlayer.transform.parent = null;
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            vida = 5;
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            Destroy(gameObject);
         }
 
         if (collision.gameObject.tag == "Enemy")
