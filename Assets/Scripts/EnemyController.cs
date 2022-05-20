@@ -11,12 +11,14 @@ public class EnemyController : MonoBehaviour
     private float speed2 = 0.005f;
     public GameObject explosionPrefab;
     private Vector3 start, end;
-    public PlayerControllerRed player;
-
-
+    private AudioSource enemyAudioSource;
+    public AudioClip muerteEnemigo;
+    
+  
     // Start is called before the first frame update
     void Start()
     {
+        enemyAudioSource = GetComponent<AudioSource>();
         flipEnemy = GetComponent<SpriteRenderer>();
         start = transform.position;
         end = target.position;
@@ -51,6 +53,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            enemyAudioSource.PlayOneShot(muerteEnemigo);
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

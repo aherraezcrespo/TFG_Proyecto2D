@@ -14,9 +14,10 @@ public class PlayerControllerPurp : MonoBehaviour
     private Rigidbody2D playerRb;
     private float jumbForce = 9;
     private bool isGround = true;
-    private AudioSource playerAudioSource;
+    private AudioSource playerAudioSourcePurp;
     public AudioClip jump;
     public AudioClip playerLose;
+    public AudioClip coin;
     private Animator animatorPlayerJump;
     private Animator animatorPlayerRun;
     public GameObject explosionPrefab;
@@ -35,7 +36,7 @@ public class PlayerControllerPurp : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         animatorPlayerRun = GetComponent<Animator>();
         animatorPlayerJump = GetComponent<Animator>();
-        playerAudioSource = GetComponent<AudioSource>();
+        playerAudioSourcePurp = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -60,7 +61,7 @@ public class PlayerControllerPurp : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGround)
         {
-            playerAudioSource.PlayOneShot(jump);
+            playerAudioSourcePurp.PlayOneShot(jump);    
             animatorPlayerJump.SetTrigger("Jump");
             playerRb.AddForce(Vector2.up * jumbForce, ForceMode2D.Impulse);
         }
@@ -105,7 +106,7 @@ public class PlayerControllerPurp : MonoBehaviour
     {
         if (vida == 0)
         {
-            playerAudioSource.PlayOneShot(playerLose);
+            playerAudioSourcePurp.PlayOneShot(playerLose);
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             //Thread.Sleep(myDelay);
             cameraPlayer.transform.parent = null;
@@ -119,6 +120,7 @@ public class PlayerControllerPurp : MonoBehaviour
     {
         if (collision.gameObject.tag == "Coin")
         {
+            playerAudioSourcePurp.PlayOneShot(coin);
             puntuacion = puntuacion + 5;
             textoContador.text = "PUNTOS: " + puntuacion.ToString();
         }

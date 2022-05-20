@@ -7,7 +7,20 @@ public class MenuSelection : MonoBehaviour
 {
     public GameObject[] players;
     public int SelectedPlayer = 0;
-    // Start is called before the first frame update
+    private AudioSource menuAudioSource;
+    public AudioClip playerSelection;
+
+    void Start()
+    {
+        menuAudioSource = GetComponent<AudioSource>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
     public void seleccionarNivel()
     {
         switch (this.gameObject.name)
@@ -43,5 +56,7 @@ public class MenuSelection : MonoBehaviour
                 SceneManager.LoadScene(3, LoadSceneMode.Single);
                 break;
         }
+
+        menuAudioSource.PlayOneShot(playerSelection);
     }
 }
