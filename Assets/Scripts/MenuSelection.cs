@@ -20,46 +20,43 @@ public class MenuSelection : MonoBehaviour
     {
 
     }
+
     public void seleccionarNivel()
     {
         switch (this.gameObject.name)
         {
             case "ButtonPlayRed":
                 SelectedPlayer = 0;
-                menuAudioSource.PlayOneShot(playerSelection);
                 PlayerPrefs.SetInt("selectedPlayer", SelectedPlayer);
                 SceneManager.LoadScene(3, LoadSceneMode.Single);      
                 break;
             case "ButtonPlayPur":
                 SelectedPlayer = 1;
-                menuAudioSource.PlayOneShot(playerSelection);
                 PlayerPrefs.SetInt("selectedPlayer", SelectedPlayer);
                 SceneManager.LoadScene(3, LoadSceneMode.Single);
                 break;
             case "ButtonPlayGre":
                 SelectedPlayer = 2;
-                menuAudioSource.PlayOneShot(playerSelection);
                 PlayerPrefs.SetInt("selectedPlayer", SelectedPlayer);
                 SceneManager.LoadScene(3, LoadSceneMode.Single);
                 break;
             case "ButtonRed":
                 SelectedPlayer = 0;
-                menuAudioSource.PlayOneShot(playerSelection);
                 PlayerPrefs.SetInt("selectedPlayer", SelectedPlayer);
                 SceneManager.LoadScene(3, LoadSceneMode.Single);
                 break;
             case "ButtonPur":
                 SelectedPlayer = 1;
-                menuAudioSource.PlayOneShot(playerSelection);
                 PlayerPrefs.SetInt("selectedPlayer", SelectedPlayer);
                 SceneManager.LoadScene(3, LoadSceneMode.Single);
                 break;
             case "ButtonGre":
                 SelectedPlayer = 2;
-                menuAudioSource.PlayOneShot(playerSelection);
                 PlayerPrefs.SetInt("selectedPlayer", SelectedPlayer);
                 SceneManager.LoadScene(3, LoadSceneMode.Single);
                 break;
         }
+
+        menuAudioSource.PlayOneShot(playerSelection);
     }
 }
