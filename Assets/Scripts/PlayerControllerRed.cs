@@ -21,8 +21,9 @@ public class PlayerControllerRed : MonoBehaviour
     public AudioClip coin;
     public GameObject explosionPrefab;
     public GameObject cameraPlayer;
-    public int vida = 5;
+    public static int vida = 5;
     public static int puntuacion = 0;
+    public static int last_puntuacion = 0;
     public Text textoContador;
     public CorazonesRed vida_canvas;
 
@@ -34,6 +35,7 @@ public class PlayerControllerRed : MonoBehaviour
         animatorPlayerRun = GetComponent<Animator>();
         animatorPlayerJump = GetComponent<Animator>();
         playerAudioSourceRed = GetComponent<AudioSource>();
+        textoContador.text = "PUNTOS: " + puntuacion.ToString();
     }
 
     // Update is called once per frame
@@ -87,6 +89,31 @@ public class PlayerControllerRed : MonoBehaviour
             vida -= 1;
             Debug.Log("Vida -> " + vida);
             vida_canvas.CambioVida(vida);
+            if(vida <= 0)
+            {
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                vida = 5;
+                last_puntuacion = puntuacion;
+                puntuacion = 0;
+                SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+                Destroy(gameObject);
+            }
+        }
+
+        if (collision.gameObject.tag == "Monster")
+        {
+            vida -= 1;
+            Debug.Log("Vida -> " + vida);
+            vida_canvas.CambioVida(vida);
+            if (vida <= 0)
+            {
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                vida = 5;
+                last_puntuacion = puntuacion;
+                puntuacion = 0;
+                SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -102,6 +129,10 @@ public class PlayerControllerRed : MonoBehaviour
     {
         if (vida == 0)
         {
+            last_puntuacion = puntuacion;
+            puntuacion = 0;
+            CoinController.points = 0;
+            EnemyController.points = 0;
             playerAudioSourceRed.PlayOneShot(playerLose);
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             //Thread.Sleep(myDelay);
@@ -121,6 +152,12 @@ public class PlayerControllerRed : MonoBehaviour
         {
             playerAudioSourceRed.PlayOneShot(coin);
             puntuacion = puntuacion + 5;
+            textoContador.text = "PUNTOS: " + puntuacion.ToString();
+        }
+
+        if (collision.gameObject.tag == "Monster")
+        {
+            puntuacion = puntuacion + 10;
             textoContador.text = "PUNTOS: " + puntuacion.ToString();
         }
     }

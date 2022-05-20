@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Corazones : MonoBehaviour
+public class CorazonesGree : MonoBehaviour
 {
     public Sprite[] corazones;
 
     // Start is called before the first frame update
     void Start()
     {
-        int vidas = PlayerControllerPurp.vida;
+        int vidas = PlayerControllerGree.vida;
         CambioVida(vidas);
     }
 

@@ -260,9 +260,8 @@ MonoBehaviour:
   coin: {fileID: 8300000, guid: 65b2fe140d75f174ba4b1571f6705e7a, type: 3}
   explosionPrefab: {fileID: 7419822742022077837, guid: 32def36cc0391d841842a6c9adfe6396, type: 3}
   cameraPlayer: {fileID: 1208196877037178723}
-  vida: 3
   textoContador: {fileID: 7221441196217549098}
-  vida_canvas: {fileID: 5378712086233521425}
+  vida_canvas: {fileID: 7964541486628877452}
 --- !u!82 &6100335841751175295
 AudioSource:
   m_ObjectHideFlags: 0
@@ -574,14 +573,25 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6616699742815942653, guid: e844f77789a54f74297dd9e792b892d2, type: 3}
   m_PrefabInstance: {fileID: 9057564972256709155}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5378712086233521425 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3969898330308040498, guid: e844f77789a54f74297dd9e792b892d2, type: 3}
+--- !u!1 &5690222004051848675 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3694453188468860864, guid: e844f77789a54f74297dd9e792b892d2, type: 3}
   m_PrefabInstance: {fileID: 9057564972256709155}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &7964541486628877452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5690222004051848675}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e677696d6cb3a764ab50b1bdb259b479, type: 3}
+  m_Script: {fileID: 11500000, guid: 220cedfc82972f5469aa789ce27e8919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  corazones:
+  - {fileID: -115082304, guid: e84ca9dd1bbc8be4aaac873a5856f305, type: 3}
+  - {fileID: -427226021, guid: e84ca9dd1bbc8be4aaac873a5856f305, type: 3}
+  - {fileID: -1292355818, guid: e84ca9dd1bbc8be4aaac873a5856f305, type: 3}
+  - {fileID: 846082538, guid: e84ca9dd1bbc8be4aaac873a5856f305, type: 3}

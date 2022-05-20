@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3656219960687191110}
   - component: {fileID: 4322573815468317390}
   - component: {fileID: 575845352184509003}
-  - component: {fileID: 3969898330308040498}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -77,23 +76,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3969898330308040498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3694453188468860864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e677696d6cb3a764ab50b1bdb259b479, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  corazones:
-  - {fileID: -115082304, guid: e84ca9dd1bbc8be4aaac873a5856f305, type: 3}
-  - {fileID: -427226021, guid: e84ca9dd1bbc8be4aaac873a5856f305, type: 3}
-  - {fileID: -1292355818, guid: e84ca9dd1bbc8be4aaac873a5856f305, type: 3}
-  - {fileID: 846082538, guid: e84ca9dd1bbc8be4aaac873a5856f305, type: 3}
 --- !u!1 &5419161451644535344
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public static int points = 0;
     private float speed = 0.002f;
     private SpriteRenderer flipEnemy;
     private float movementX;
@@ -56,6 +57,7 @@ public class EnemyController : MonoBehaviour
             enemyAudioSource.PlayOneShot(muerteEnemigo);
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            points += 10;
         }
     }
 

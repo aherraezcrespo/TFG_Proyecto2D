@@ -9,6 +9,7 @@ TagManager:
   - Coin
   - Enemy
   - Montergrass
+  - Monster
   layers:
   - Default
   - TransparentFX

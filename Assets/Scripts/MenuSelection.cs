@@ -28,32 +28,32 @@ public class MenuSelection : MonoBehaviour
             case "ButtonPlayRed":
                 SelectedPlayer = 0;
                 PlayerPrefs.SetInt("selectedPlayer", SelectedPlayer);
-                SceneManager.LoadScene(3, LoadSceneMode.Single);      
+                SceneManager.LoadScene(2, LoadSceneMode.Single);      
                 break;
             case "ButtonPlayPur":
                 SelectedPlayer = 1;
                 PlayerPrefs.SetInt("selectedPlayer", SelectedPlayer);
-                SceneManager.LoadScene(3, LoadSceneMode.Single);
+                SceneManager.LoadScene(2, LoadSceneMode.Single);
                 break;
             case "ButtonPlayGre":
                 SelectedPlayer = 2;
                 PlayerPrefs.SetInt("selectedPlayer", SelectedPlayer);
-                SceneManager.LoadScene(3, LoadSceneMode.Single);
+                SceneManager.LoadScene(2, LoadSceneMode.Single);
                 break;
             case "ButtonRed":
                 SelectedPlayer = 0;
                 PlayerPrefs.SetInt("selectedPlayer", SelectedPlayer);
-                SceneManager.LoadScene(3, LoadSceneMode.Single);
+                SceneManager.LoadScene(2, LoadSceneMode.Single);
                 break;
             case "ButtonPur":
                 SelectedPlayer = 1;
                 PlayerPrefs.SetInt("selectedPlayer", SelectedPlayer);
-                SceneManager.LoadScene(3, LoadSceneMode.Single);
+                SceneManager.LoadScene(2, LoadSceneMode.Single);
                 break;
             case "ButtonGre":
                 SelectedPlayer = 2;
                 PlayerPrefs.SetInt("selectedPlayer", SelectedPlayer);
-                SceneManager.LoadScene(3, LoadSceneMode.Single);
+                SceneManager.LoadScene(2, LoadSceneMode.Single);
                 break;
         }
 

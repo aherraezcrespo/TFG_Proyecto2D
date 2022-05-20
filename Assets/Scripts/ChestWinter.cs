@@ -25,7 +25,7 @@ public class ChestWinter : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             animatorChest.SetTrigger("Open");
-            SceneManager.LoadScene("Spring");
+            SceneManager.LoadScene("Mundo2");
         }
     }
 }

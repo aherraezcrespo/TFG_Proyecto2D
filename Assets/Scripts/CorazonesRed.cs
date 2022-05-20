@@ -10,7 +10,8 @@ public class CorazonesRed : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CambioVida(5);
+        int vidas = PlayerControllerRed.vida;
+        CambioVida(vidas);
     }
 
     // Update is called once per frame

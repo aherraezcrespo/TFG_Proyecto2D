@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Corazones : MonoBehaviour
+public class CorazonesPurp : MonoBehaviour
 {
     public Sprite[] corazones;
 

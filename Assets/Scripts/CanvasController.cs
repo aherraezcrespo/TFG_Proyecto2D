@@ -16,6 +16,14 @@ public class CanvasController : MonoBehaviour
     {
         
     }
+    public void mundo1Completado()
+    {
+        SceneManager.LoadScene("Winter");
+    }
+    public void mundo2Completado()
+    {
+        SceneManager.LoadScene("Spring");
+    }
 
     public void seleccionarNivel()
     {

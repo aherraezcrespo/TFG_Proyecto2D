@@ -176,9 +176,8 @@ MonoBehaviour:
   coin: {fileID: 8300000, guid: 65b2fe140d75f174ba4b1571f6705e7a, type: 3}
   explosionPrefab: {fileID: 7052665612581140207, guid: 751e87739eb12164d9302aae43662447, type: 3}
   cameraPlayer: {fileID: 1783796600548635780}
-  vida: 3
   textoContador: {fileID: 1798141552944817379}
-  vida_canvas: {fileID: 6227772754657377328}
+  vida_canvas: {fileID: 3301633926624928389}
 --- !u!82 &3827494909224268072
 AudioSource:
   m_ObjectHideFlags: 0
@@ -567,21 +566,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7065797380861272571, guid: e844f77789a54f74297dd9e792b892d2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e844f77789a54f74297dd9e792b892d2, type: 3}
 --- !u!224 &4227097151071476991 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6616699742815942653, guid: e844f77789a54f74297dd9e792b892d2, type: 3}
   m_PrefabInstance: {fileID: 7024092790570625794}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6227772754657377328 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3969898330308040498, guid: e844f77789a54f74297dd9e792b892d2, type: 3}
+--- !u!1 &5926669714379427010 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3694453188468860864, guid: e844f77789a54f74297dd9e792b892d2, type: 3}
   m_PrefabInstance: {fileID: 7024092790570625794}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &3301633926624928389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5926669714379427010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e677696d6cb3a764ab50b1bdb259b479, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e7ae2fb12505004ea81b43b4739c725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  corazones:
+  - {fileID: -115082304, guid: e84ca9dd1bbc8be4aaac873a5856f305, type: 3}
+  - {fileID: -427226021, guid: e84ca9dd1bbc8be4aaac873a5856f305, type: 3}
+  - {fileID: -1292355818, guid: e84ca9dd1bbc8be4aaac873a5856f305, type: 3}
+  - {fileID: 846082538, guid: e84ca9dd1bbc8be4aaac873a5856f305, type: 3}

@@ -258,10 +258,8 @@ MonoBehaviour:
   jump: {fileID: 8300000, guid: 276828f64dfa3d847a4c2d6d646b5a64, type: 3}
   playerLose: {fileID: 8300000, guid: 61aa266532897114da221f83338aed85, type: 3}
   coin: {fileID: 8300000, guid: 65b2fe140d75f174ba4b1571f6705e7a, type: 3}
-  muerteEnemigo: {fileID: 8300000, guid: 12184a46abdd65b418713ece0381e99a, type: 3}
   explosionPrefab: {fileID: 1340905626085436462, guid: 5d430b7da23fa6e438dd57e44c9cac7c, type: 3}
   cameraPlayer: {fileID: 8439933878805796833}
-  vida: 5
   textoContador: {fileID: 7932105159314935523}
   vida_canvas: {fileID: 4125826402444341392}
 --- !u!82 &1630140675238337676

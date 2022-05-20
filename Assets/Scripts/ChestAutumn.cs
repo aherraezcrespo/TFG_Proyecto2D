@@ -25,7 +25,7 @@ public class ChestAutumn : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             animatorChest.SetTrigger("Open");
-            SceneManager.LoadScene("Winter");
+            SceneManager.LoadScene("Mundo1");
         }
     }
 }
