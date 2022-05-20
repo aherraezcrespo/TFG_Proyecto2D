@@ -124,4 +124,5 @@ public class PlayerControllerRed : MonoBehaviour
             textoContador.text = "PUNTOS: " + puntuacion.ToString();
         }
     }
+
 }
