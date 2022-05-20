@@ -3461,11 +3461,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9024256859960313418, guid: 8ec1382d491b1ab4e99ad9a5198c1334, type: 3}
   m_PrefabInstance: {fileID: 9024256861223000631}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &582024352 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 541520771771935299, guid: 9a47d01935d505f40ab993f8ced6cf43, type: 3}
-  m_PrefabInstance: {fileID: 2100730361}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &582024358 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7677976130232095076, guid: 9a47d01935d505f40ab993f8ced6cf43, type: 3}
@@ -5515,11 +5510,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 993e13b6b89472f4cb5421bd848b5482, type: 3}
---- !u!1 &830337499 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8439933879118198962, guid: 3584ac6d6bc047e408dff3a5a341fecf, type: 3}
-  m_PrefabInstance: {fileID: 650806168}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &830337505 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8439933879118198959, guid: 3584ac6d6bc047e408dff3a5a341fecf, type: 3}
@@ -35889,11 +35879,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 993e13b6b89472f4cb5421bd848b5482, type: 3}
---- !u!1 &1087372924 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8824787028942384514, guid: 0d03675d5823c5f46a53bcf84f814f27, type: 3}
-  m_PrefabInstance: {fileID: 1939232542}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1087372930 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3753086174793125769, guid: 0d03675d5823c5f46a53bcf84f814f27, type: 3}
@@ -38001,9 +37986,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefabs:
-  - {fileID: 830337499}
-  - {fileID: 1087372924}
-  - {fileID: 582024352}
+  - {fileID: 8439933879118198962, guid: 3584ac6d6bc047e408dff3a5a341fecf, type: 3}
+  - {fileID: 8824787028942384514, guid: 0d03675d5823c5f46a53bcf84f814f27, type: 3}
+  - {fileID: 541520771771935299, guid: 9a47d01935d505f40ab993f8ced6cf43, type: 3}
   spawn: {fileID: 512074504}
 --- !u!4 &1414120880
 Transform:
