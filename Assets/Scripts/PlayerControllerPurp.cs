@@ -17,6 +17,7 @@ public class PlayerControllerPurp : MonoBehaviour
     private AudioSource playerAudioSourcePurp;
     public AudioClip jump;
     public AudioClip playerLose;
+    public AudioClip coin;
     private Animator animatorPlayerJump;
     private Animator animatorPlayerRun;
     public GameObject explosionPrefab;
@@ -119,6 +120,7 @@ public class PlayerControllerPurp : MonoBehaviour
     {
         if (collision.gameObject.tag == "Coin")
         {
+            playerAudioSourcePurp.PlayOneShot(coin);
             puntuacion = puntuacion + 5;
             textoContador.text = "PUNTOS: " + puntuacion.ToString();
         }

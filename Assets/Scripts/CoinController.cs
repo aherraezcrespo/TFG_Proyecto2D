@@ -7,13 +7,11 @@ using System.Threading;
 public class CoinController : MonoBehaviour
 {
     public static int points = 0;
-    private AudioSource coinAudioSource;
-    public AudioClip coin;
 
     // Start is called before the first frame update
     void Start()
     {
-        coinAudioSource = GetComponent<AudioSource>();
+       
     }
 
     // Update is called once per frame
@@ -26,7 +24,6 @@ public class CoinController : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            coinAudioSource.PlayOneShot(coin);
             points += 5;
             Destroy(gameObject);
         }

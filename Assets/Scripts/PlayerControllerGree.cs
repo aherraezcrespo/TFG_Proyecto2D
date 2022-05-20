@@ -17,6 +17,7 @@ public class PlayerControllerGree : MonoBehaviour
     private AudioSource playerAudioSourceGree;
     public AudioClip jump;
     public AudioClip playerLose;
+    public AudioClip coin;
     private Animator animatorPlayerJump;
     private Animator animatorPlayerRun;
     public GameObject explosionPrefab;
@@ -117,6 +118,7 @@ public class PlayerControllerGree : MonoBehaviour
     {
         if (collision.gameObject.tag == "Coin")
         {
+            playerAudioSourceGree.PlayOneShot(coin);
             puntuacion = puntuacion + 5;
             textoContador.text = "PUNTOS: " + puntuacion.ToString();
         }

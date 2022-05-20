@@ -172,7 +172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jump: {fileID: 8300000, guid: 276828f64dfa3d847a4c2d6d646b5a64, type: 3}
-  playerLose: {fileID: 0}
+  playerLose: {fileID: 8300000, guid: 61aa266532897114da221f83338aed85, type: 3}
+  coin: {fileID: 8300000, guid: 65b2fe140d75f174ba4b1571f6705e7a, type: 3}
   explosionPrefab: {fileID: 7052665612581140207, guid: 751e87739eb12164d9302aae43662447, type: 3}
   cameraPlayer: {fileID: 1783796600548635780}
   vida: 3
