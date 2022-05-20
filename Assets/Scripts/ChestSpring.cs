@@ -25,7 +25,7 @@ public class ChestSpring : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             animatorChest.SetTrigger("Open");
-            SceneManager.LoadScene("Start");
+            SceneManager.LoadScene("Winner");
         }
     }
 }

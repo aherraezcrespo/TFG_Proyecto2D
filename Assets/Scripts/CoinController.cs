@@ -28,6 +28,7 @@ public class CoinController : MonoBehaviour
         {
             coinAudioSource.PlayOneShot(coin);
             points += 5;
+            PlayerPrefs.SetInt("puntuacion", points);
             Destroy(gameObject);
         }
     }
