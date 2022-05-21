@@ -17,6 +17,7 @@ public class PlayerControllerPurp : MonoBehaviour
     private AudioSource playerAudioSourcePurp;
     public AudioClip jump;
     public AudioClip playerLose;
+    public AudioClip ouch;
     public AudioClip coin;
     private Animator animatorPlayerJump;
     private Animator animatorPlayerRun;
@@ -80,6 +81,7 @@ public class PlayerControllerPurp : MonoBehaviour
 
         if (collision.gameObject.tag == "Water")
         {
+            playerAudioSourcePurp.PlayOneShot(ouch);
             cameraPlayer.transform.parent = null;
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             vida = 3;
@@ -89,6 +91,7 @@ public class PlayerControllerPurp : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
+            playerAudioSourcePurp.PlayOneShot(ouch);
             vida -= 1;
             Debug.Log("Vida -> " + vida);
             vida_canvas.CambioVida(vida);
@@ -105,6 +108,7 @@ public class PlayerControllerPurp : MonoBehaviour
 
         if (collision.gameObject.tag == "Monster")
         {
+            playerAudioSourcePurp.PlayOneShot(ouch);
             vida -= 1;
             Debug.Log("Vida -> " + vida);
             vida_canvas.CambioVida(vida);

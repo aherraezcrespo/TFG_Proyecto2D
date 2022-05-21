@@ -257,6 +257,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jump: {fileID: 8300000, guid: 276828f64dfa3d847a4c2d6d646b5a64, type: 3}
   playerLose: {fileID: 8300000, guid: 61aa266532897114da221f83338aed85, type: 3}
+  enemyouch: {fileID: 8300000, guid: 1fb8165df8c72b943ba2213fd8e57194, type: 3}
+  ouch: {fileID: 8300000, guid: e04888ba31bfebd4ab0095f6d01a9c33, type: 3}
   coin: {fileID: 8300000, guid: 65b2fe140d75f174ba4b1571f6705e7a, type: 3}
   explosionPrefab: {fileID: 1340905626085436462, guid: 5d430b7da23fa6e438dd57e44c9cac7c, type: 3}
   cameraPlayer: {fileID: 8439933878805796833}
